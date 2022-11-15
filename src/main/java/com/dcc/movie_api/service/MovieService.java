@@ -24,4 +24,10 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
+// GET by integer(id/pk)
+    // orElse null, rather than a placeholder movie data entry
+    public Movie getById(Integer id){
+        return movieRepository.findById(id).orElse(null);
+    }
+
 }
