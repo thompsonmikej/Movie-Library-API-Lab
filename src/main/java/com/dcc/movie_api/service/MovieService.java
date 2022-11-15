@@ -30,4 +30,8 @@ public class MovieService {
         return movieRepository.findById(id).orElse(null);
     }
 
+    public List<Movie> getByGenre(String genre){
+        return movieRepository.findByGenre(genre);
+    }
+
 }
