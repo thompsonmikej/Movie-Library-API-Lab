@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Movie {
-    //Instance variables (made private)
+    //Instance variables (has a)
     @Id
     @GeneratedValue
         private Integer id;
@@ -28,6 +28,7 @@ public class Movie {
         this.director = director;
     }
 
+// Methods (Can do)
 // Getters
 
     public Integer getId() {
