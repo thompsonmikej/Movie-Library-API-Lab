@@ -24,14 +24,17 @@ public class MovieService {
         return movieRepository.findAll();
     }
 
-// GET by integer(id/pk)
-    // orElse null, rather than a placeholder movie data entry
+//
     public Movie getById(Integer id){
         return movieRepository.findById(id).orElse(null);
     }
 
     public List<Movie> getByGenre(String genre){
         return movieRepository.findByGenre(genre);
+    }
+
+    public List<Movie> getByName(String name){
+        return movieRepository.findByName(name);
     }
 
 }
