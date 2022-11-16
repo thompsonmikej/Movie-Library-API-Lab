@@ -33,7 +33,7 @@ public class MovieService {
         return movieRepository.findByGenre(genre);
     }
 
-    public List<Movie> getByName(String name){
+    public Movie getByName(String name){
         return movieRepository.findByName(name);
     }
 
