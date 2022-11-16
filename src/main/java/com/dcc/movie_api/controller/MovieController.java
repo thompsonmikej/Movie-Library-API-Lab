@@ -3,6 +3,7 @@ package com.dcc.movie_api.controller;
 import com.dcc.movie_api.data.Movie;
 import com.dcc.movie_api.service.MovieService;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +21,7 @@ public class MovieController {
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.saveMovie(movie);
     }
+
 
     @GetMapping("/movies")
     public List<Movie> findAllMovies() {
@@ -43,15 +45,7 @@ public class MovieController {
 
     @PutMapping("/updateById/{id}")
     public Movie updateMovieById(@PathVariable Integer id, @RequestBody Movie movie) {
-        //Finding movie on db, saving as variable
-        Movie updateMovie = movieService.getById(id);
-        updateMovie.setId(movie.getId());
-        updateMovie.setName(movie.getName());
-        updateMovie.setGenre(movie.getGenre());
-        updateMovie.setDirector(movie.getDirector());
-        movieService.saveMovie(updateMovie);
-
-        return updateMovie;
+        return movieService.saveMovie(movie);
     }
 
     @DeleteMapping("/deleteById/{id}")
