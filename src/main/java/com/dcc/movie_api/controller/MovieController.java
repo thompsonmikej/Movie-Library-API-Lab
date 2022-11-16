@@ -2,6 +2,7 @@ package com.dcc.movie_api.controller;
 
 import com.dcc.movie_api.data.Movie;
 import com.dcc.movie_api.service.MovieService;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,10 +54,10 @@ public class MovieController {
         return updateMovie;
     }
 
-
-
+    @DeleteMapping("/deleteById/{id}")
+    public void deleteMovieById(@PathVariable Integer id) {
+        movieService.getById(id);
+    }
 
 }
-
-
 

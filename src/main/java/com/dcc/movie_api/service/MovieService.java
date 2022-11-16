@@ -37,5 +37,8 @@ public class MovieService {
         return movieRepository.findByName(name);
     }
 
+    public void deleteById(Integer id){
+       movieRepository.deleteById(id);
+    }
 
 }

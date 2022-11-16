@@ -66,4 +66,7 @@ public class Movie {
     public void setDirector(String director) {
         this.director = director;
     }
+
+    public void put(String deleted, Boolean aTrue) {
+    }
 }
