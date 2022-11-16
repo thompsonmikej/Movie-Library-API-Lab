@@ -2,6 +2,7 @@ package com.dcc.movie_api.controller;
 
 import com.dcc.movie_api.data.Movie;
 import com.dcc.movie_api.service.MovieService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class MovieController {
     public Movie addMovie(@RequestBody Movie movie) {
         return movieService.saveMovie(movie);
     }
+
 
 
     @GetMapping("/movies")
@@ -49,9 +51,9 @@ public class MovieController {
     }
 
     @DeleteMapping("/deleteById/{id}")
+    @ResponseStatus(value= HttpStatus.NO_CONTENT)
     public void deleteMovieById(@PathVariable Integer id) {
         movieService.getById(id);
     }
-
 }
 
