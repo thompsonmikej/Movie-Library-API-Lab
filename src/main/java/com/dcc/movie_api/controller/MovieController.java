@@ -16,27 +16,43 @@ public class MovieController {
 
 
     @PostMapping("/addMovie")
-    public Movie addMovie(@RequestBody Movie movie){
+    public Movie addMovie(@RequestBody Movie movie) {
         return movieService.saveMovie(movie);
     }
 
     @GetMapping("/movies")
-    public List<Movie> findAllMovies(){
+    public List<Movie> findAllMovies() {
         return movieService.getAllMovies();
     }
+
     @GetMapping("/movies/{id}")
-    public Movie findMovieById(@PathVariable Integer id){
+    public Movie findMovieById(@PathVariable Integer id) {
         return movieService.getById(id);
     }
+
     @GetMapping("/findByGenre/{genre}")
     public List<Movie> findMovieByGenre(@PathVariable String genre) {
         return movieService.getByGenre(genre);
     }
 
     @GetMapping("/findByName/{name}")
-        public List<Movie> findMovieByName(@PathVariable String name) {
+    public List<Movie> findMovieByName(@PathVariable String name) {
         return movieService.getByName(name);
     }
+//    @PutMapping("/updateById/{id}")
+//    public Movie updateMovieById(@PathVariable Integer id, @RequestBody) {
+//        return movieService.updateById(id);
+
+    @DeleteMapping("/deleteById/{id}")
+        public Movie deleteMovieById(@PathVariable Integer id) {
+            return movieService.getById(id);
+        }
+
+//    @PutMapping("/employees/{id}")
+//    public ResponseEntity<Employee> updateEmployee(@PathVariable(value = "id") Long employeeId,
+//            @Valid @RequestBody Employee employeeDetails) throws ResourceNotFoundException {
+//                      .orElseThrow(() -> new ("Employee not found for this id :: " + employeeId));
+
 }
 
 
