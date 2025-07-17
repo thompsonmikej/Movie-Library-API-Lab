@@ -11,7 +11,7 @@ A Spring Boot RESTful API project for managing a movie library, showcasing key f
 - Defines a `Movie` entity class with fields for `id`, `name`, `genre`, and `director`.  
 - Uses standard JPA annotations such as `@Entity`, `@Id`, and `@GeneratedValue`.  
 - Implements a Spring Data JPA repository interface (`MovieRepository`) extending `JpaRepository` for seamless CRUD functionality.  
-- Supports creating, reading, updating, and deleting movies through REST endpoints (assumed).  
+- Supports creating, reading, updating, and deleting movies through REST endpoints.  
 - Develops backend API logic in Java using IntelliJ and connects to a MySQL database for persistence.
 
 ---
@@ -57,7 +57,7 @@ A Spring Boot RESTful API project for managing a movie library, showcasing key f
     ```
 
 4. **Test CRUD operations:**  
-   - Use Postman, curl, or your browser to interact with API endpoints (e.g., `/movies`).  
+   - Use Postman, curl, or your browser to interact with API endpoints.  
    - Verify data persists properly in MySQL.
 
 ---
